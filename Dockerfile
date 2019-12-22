@@ -12,7 +12,7 @@ RUN set -x \
         && tar zxvf steamcmd_linux.tar.gz \
         && mkdir -p /root/.klei/DoNotStarveTogether \
         && cd /root/.klei/DoNotStarveTogether \
-        && wget https://github.com/jianrry/dst/blob/master/MyDediServer.zip \
+        && wget https://github.com/jianrry/dst/raw/master/MyDediServer.zip \
         && unzip MyDediServer.zip \
         && cd /root \
         && wget https://drive.jianrry.com/dst/config/run.sh \
