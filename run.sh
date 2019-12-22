@@ -1,0 +1,1 @@
+cd /root/steamcmd && ./steamcmd.sh +login anonymous +force_install_dir /root/dst +app_update 343050 validate +quit && cd /root/dst/bin && ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Master && ./dontstarve_dedicated_server_nullrenderer -console -cluster MyDediServer -shard Caves
