@@ -15,7 +15,7 @@ RUN set -x \
         && wget https://github.com/jianrry/dst/raw/master/MyDediServer.zip \
         && unzip MyDediServer.zip \
         && cd /root \
-        && wget https://drive.jianrry.com/dst/config/run.sh \
+        && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
         && chmod +x run.sh \
         && apt-get remove --purge -y wget ca-certificates unzip \
         && apt-get clean autoclean \
