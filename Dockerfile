@@ -1,0 +1,31 @@
+FROM ubuntu:latest
+
+MAINTAINER Jianrry <jianrry@gmail.com>
+
+RUN set -x \
+        && dpkg --add-architecture i386 \
+        && apt update \
+        && apt-get install -y --no-install-recommends --no-install-suggests lib32gcc1 lib32stdc++6 libcurl4-gnutls-dev:i386 wget ca-certificates unzip \
+        && mkdir -p /root/steamcmd \
+        && cd /root/steamcmd \
+        && wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz \
+        && tar zxvf steamcmd_linux.tar.gz \
+        && mkdir -p /root/.klei/DoNotStarveTogether \
+        && cd /root/.klei/DoNotStarveTogether \
+        && wget https://github.com/jianrry/dst/blob/master/MyDediServer.zip \
+        && unzip MyDediServer.zip \
+        && cd /root \
+        && wget https://drive.jianrry.com/dst/config/run.sh \
+        && chmod +x run.sh \
+        && apt-get remove --purge -y wget ca-certificates unzip \
+        && apt-get clean autoclean \
+	    && apt-get autoremove -y \
+	    && rm -rf /var/lib/apt/lists/*
+
+CMD ["sh", "/root/run.sh"]
+
+EXPOSE 10999/udp
+
+
+
+
