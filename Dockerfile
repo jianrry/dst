@@ -17,10 +17,7 @@ RUN set -x \
         && cd /root \
         && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
         && chmod +x run.sh \
-        && apt-get remove --purge -y wget ca-certificates unzip \
-        && apt-get clean autoclean \
-	    && apt-get autoremove -y \
-	    && rm -rf /var/lib/apt/lists/*
+        && apt-get remove --purge -y wget ca-certificates unzip 
 
 CMD ["sh", "/root/run.sh"]
 
