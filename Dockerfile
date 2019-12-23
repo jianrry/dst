@@ -14,7 +14,7 @@ RUN set -x \
         && cd /root/.klei/DoNotStarveTogether \
         && wget https://github.com/jianrry/dst/raw/master/MyDediServer.zip \
         && unzip MyDediServer.zip \
-        && cd /root \
+        && cd /root/.klei/DoNotStarveTogether/MyDediServer \
         && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
         && chmod +x run.sh \
         && apt-get remove --purge -y wget ca-certificates unzip \
@@ -22,7 +22,7 @@ RUN set -x \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
 
-CMD ["sh", "/root/run.sh"]
+CMD ["sh", "/root/.klei/DoNotStarveTogether/MyDediServer/run.sh"]
 
 EXPOSE 10999/udp
 
