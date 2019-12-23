@@ -1,4 +1,4 @@
-## 用法
+## 安装
 
 ### Step1: 下载安装Docker
 
@@ -18,6 +18,32 @@ curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
 
 ```
 docker run --name=dst jianrry/dst
+```
+
+## 管理
+
+### 停止容器
+
+```
+docker stop dst
+```
+
+### 删除容器
+
+```
+docker rm dst
+```
+
+### 启动容器
+
+```
+docker start dst
+```
+
+### 重启容器
+
+```
+docker restart dst
 ```
 
  
