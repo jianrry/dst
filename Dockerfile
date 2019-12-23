@@ -14,6 +14,9 @@ RUN set -x \
         && cd /root/.klei/DoNotStarveTogether \
         && wget https://github.com/jianrry/dst/raw/master/MyDediServer.zip \
         && unzip MyDediServer.zip \
+	&& cd /root/steamcmd \
+	&& ./steamcmd.sh +login anonymous +force_install_dir /root/dst +app_update 343050 +quit \
+	&& echo "ServerModSetup(\"1938752683\")" > /root/dst/mods/dedicated_server_mods_setup.lua \
         && cd /root/.klei/DoNotStarveTogether/MyDediServer \
         && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
         && chmod +x run.sh \
