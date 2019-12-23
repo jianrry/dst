@@ -25,7 +25,7 @@ docker run --name=dst jianrry/dst
 ### 创建容器，并挂载目录(冒号前为宿主机目录，冒号后为容器内挂载的目录，都必须为绝对路径。)
 
 ```
-docker run --name=dst -it -v /root/dst/config: /root/.klei/DoNotStarveTogether jianrry/dst /bin/bash
+docker run --name=dst -it -v /root/dst/config:/root/.klei/DoNotStarveTogether jianrry/dst /bin/bash
 ```
 
 ### 查看容器
