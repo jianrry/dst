@@ -22,16 +22,16 @@ docker run --name=dst jianrry/dst
 
 ## 管理
 
+### 查看容器
+
+```
+docker ps -a
+```
+
 ### 停止容器
 
 ```
 docker stop dst
-```
-
-### 删除容器
-
-```
-docker rm dst
 ```
 
 ### 启动容器
@@ -44,6 +44,30 @@ docker start dst
 
 ```
 docker restart dst
+```
+
+### 删除容器（删除容器前，请停止该容器）
+
+```
+docker rm dst
+```
+
+### 查看容器日志
+
+```
+docker logs dst
+```
+
+### 查看镜像
+
+```
+docker images -a
+```
+
+### 删除镜像（删除镜像前，请停止该镜像创建的全部容器）
+
+```
+docker rmi jianrry/dst
 ```
 
  
