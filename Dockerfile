@@ -19,7 +19,11 @@ RUN set -x \
         && echo "ServerModSetup(\"1938752683\")" > /root/dst/mods/dedicated_server_mods_setup.lua \
         && cd /root \
         && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
-        && chmod +x run.sh 
+        && chmod +x run.sh \
+        && apt-get remove --purge -y wget ca-certificates unzip \
+        && apt-get clean autoclean \
+	&& apt-get autoremove -y \
+	&& rm -rf /var/lib/apt/lists/*
 
 CMD ["sh", "/root/run.sh"]
 
