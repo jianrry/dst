@@ -14,10 +14,11 @@ RUN set -x \
         && cd /root/.klei/DoNotStarveTogether \
         && wget https://github.com/jianrry/dst/raw/master/MyDediServer.zip \
         && unzip MyDediServer.zip \
+        && mkdir -p /root/dst/mods \
+        && echo "ServerModSetup(\"1938752683\")" > /root/dst/mods/dedicated_server_mods_setup.lua
         && cd /root \
         && wget https://raw.githubusercontent.com/jianrry/dst/master/run.sh \
-        && chmod +x run.sh \
-        && apt-get remove --purge -y wget ca-certificates unzip 
+        && chmod +x run.sh 
 
 CMD ["sh", "/root/run.sh"]
 
